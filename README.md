@@ -48,10 +48,15 @@ To get started with this project, follow these steps:
 
 ## Prerequisites
 Ensure you have the following libraries installed:
+
 1)pandas
+
 2) numpy
+   
 3) scikit-learn
+
 4) lightgbm
+  
 5) matplotlib
 
 ## Running the Code
