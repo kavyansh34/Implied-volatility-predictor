@@ -1,10 +1,10 @@
 # Implied-volatility-predictor
 This project focuses on predicting the implied volatility (IV) of Ethereum (ETH) options. By leveraging high-frequency order book data and cross-asset information from Bitcoin (BTC), this model aims to provide accurate short-term IV forecasts. This README provides a comprehensive overview of the project, from feature engineering to model training and evaluation.
 
-## Features
+### Features
 This model's predictive power is built upon a robust set of engineered features designed to capture the complex dynamics of the cryptocurrency market. These features provide a multi-faceted view of market activity, enabling more accurate IV predictions.
 
-# Core Features
+### Core Features
 1) Realized Volatility: To capture recent price fluctuations, we calculate the rolling realized volatility over 10-second and 60-second windows. This is derived from log returns of the mid-price, providing a dynamic measure of market risk. 📈
 
 2) Ask-Bid Spread: The spread between the best ask and bid prices is a key indicator of market liquidity and transaction costs. We compute the spread at multiple levels of the order book (levels 1 and 3) to gain a deeper understanding of market depth.
@@ -13,7 +13,7 @@ This model's predictive power is built upon a robust set of engineered features 
 
 4) Order-Book Imbalance (OBI): OBI measures the directional pressure in the order book by comparing the volume of buy and sell orders. This is calculated for levels 1 and 5 and serves as a powerful predictor of short-term price movements.
 
-# Advanced Features
+### Advanced Features
 1) Lagged Features: To incorporate the influence of past market states on future volatility, we introduce lagged versions of key features. Specifically, we use 1-second, 5-second, and 10-second lags for both OBI and WAP, allowing the model to learn from historical patterns.
 
 2) ross-Asset Volatility: Given the high correlation between ETH and BTC, we incorporate the realized volatility of BTC as a cross-asset feature. This is calculated over a 60-second window and provides valuable context about the broader market sentiment. Lagged versions of this feature at 5-second and 10-second intervals are also included to capture delayed market reactions.
