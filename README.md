@@ -1,7 +1,7 @@
-## Implied-volatility-predictor
+# Implied-volatility-predictor
 This project focuses on predicting the implied volatility (IV) of Ethereum (ETH) options. By leveraging high-frequency order book data and cross-asset information from Bitcoin (BTC), this model aims to provide accurate short-term IV forecasts. This README provides a comprehensive overview of the project, from feature engineering to model training and evaluation.
 
-# Features
+## Features
 This model's predictive power is built upon a robust set of engineered features designed to capture the complex dynamics of the cryptocurrency market. These features provide a multi-faceted view of market activity, enabling more accurate IV predictions.
 
 # Core Features
