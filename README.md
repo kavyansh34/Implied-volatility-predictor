@@ -1,7 +1,7 @@
 # Implied-volatility-predictor
 This project focuses on predicting the implied volatility (IV) of Ethereum (ETH) options. By leveraging high-frequency order book data and cross-asset information from Bitcoin (BTC), this model aims to provide accurate short-term IV forecasts. This README provides a comprehensive overview of the project, from feature engineering to model training and evaluation.
 
-### Features
+## Features
 This model's predictive power is built upon a robust set of engineered features designed to capture the complex dynamics of the cryptocurrency market. These features provide a multi-faceted view of market activity, enabling more accurate IV predictions.
 
 ### Core Features
@@ -18,21 +18,21 @@ This model's predictive power is built upon a robust set of engineered features 
 
 2) ross-Asset Volatility: Given the high correlation between ETH and BTC, we incorporate the realized volatility of BTC as a cross-asset feature. This is calculated over a 60-second window and provides valuable context about the broader market sentiment. Lagged versions of this feature at 5-second and 10-second intervals are also included to capture delayed market reactions.
 
-# Machine Learning Model
+## Machine Learning Model
 At the heart of this project is the LightGBM (Light Gradient Boosting Machine), a high-performance gradient boosting framework. LightGBM is well-suited for this task due to its ability to handle large datasets with high efficiency and accuracy.
 
-# Model Training and Validation
+### Model Training and Validation
 Cross-Validation: To ensure the model's robustness and prevent overfitting, we employ TimeSeriesSplit for cross-validation. This technique is specifically designed for time-series data, as it preserves the temporal order of observations. The data is split into 7 consecutive folds, with the model being trained on past data and validated on future data in each fold.
 
-Hyperparameters: The LightGBM model is configured with the following key hyperparameters:
-n_estimators: 105
-learning_rate: 0.023
-objective: 'regression'
-metric: 'rmse'
+### Hyperparameters: The LightGBM model is configured with the following key hyperparameters:
+1) n_estimators: 105
+2) learning_rate: 0.023
+3) objective: 'regression'
+4) metric: 'rmse'
 
-Feature Selection: After an initial round of training, a feature importance analysis is conducted to identify the most influential features. The model is then retrained using only the top 20 features, which helps to reduce noise and improve generalization.
+### Feature Selection: After an initial round of training, a feature importance analysis is conducted to identify the most influential features. The model is then retrained using only the top 20 features, which helps to reduce noise and improve generalization.
 
-Project Structure
+## Project Structure
 The project is organized into the following key components:
 
 goquantfinalsubmission.ipynb: The main Jupyter notebook containing the complete workflow, including data loading, feature engineering, model training, and submission generation.
@@ -46,39 +46,34 @@ submission_final.csv: The final output file containing the predicted implied vol
 Setup and Usage
 To get started with this project, follow these steps:
 
-Prerequisites
+## Prerequisites
 Ensure you have the following libraries installed:
+1)pandas
+2) numpy
+3) scikit-learn
+4) lightgbm
+5) matplotlib
 
-pandas
-
-numpy
-
-scikit-learn
-
-lightgbm
-
-matplotlib
-
-Running the Code
+## Running the Code
 Clone the repository to your local machine.
 
 Place the dataset files (ETH_train.csv, ETH_test.csv, BTC_train.csv, BTC_test.csv) in the specified path within the notebook.
 
 Open and run the goquantfinalsubmission.ipynb notebook. The notebook is structured to execute the entire pipeline, from data preprocessing to generating the final submission file.
 
-Results
+## Results
 The model's performance is evaluated using several key metrics, which are calculated for each fold of the cross-validation process. The final results demonstrate the model's effectiveness in forecasting implied volatility.
 
-Performance Metrics
-Root Mean Squared Error (RMSE): The average RMSE across all folds is approximately 0.000047.
+### Performance Metrics
+1) Root Mean Squared Error (RMSE): The average RMSE across all folds is approximately 0.000047.
 
-Mean Absolute Error (MAE): The average MAE is approximately 0.000033.
+2) Mean Absolute Error (MAE): The average MAE is approximately 0.000033.
 
-R-squared (R²): The R-squared score for the final fold is 0.466, indicating that the model explains a significant portion of the variance in the data.
+3) R-squared (R²): The R-squared score for the final fold is 0.466, indicating that the model explains a significant portion of the variance in the data.
 
-Pearson Correlation: The average Pearson correlation coefficient is 0.612, signifying a strong positive relationship between the predicted and actual IV values.
+4) Pearson Correlation: The average Pearson correlation coefficient is 0.612, signifying a strong positive relationship between the predicted and actual IV values.
 
-Visualizations
+## Visualizations
 Actual vs. Predicted IV: A line graph comparing the actual and predicted IV for the last 5,000 data points of the final validation fold provides a visual confirmation of the model's tracking ability.
 
 Feature Importance: A bar chart of feature importances highlights the most influential predictors, offering insights into the key drivers of implied volatility. 📊
