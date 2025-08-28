@@ -49,7 +49,7 @@ To get started with this project, follow these steps:
 ## Prerequisites
 Ensure you have the following libraries installed:
 
-1)pandas
+1) pandas
 
 2) numpy
    
