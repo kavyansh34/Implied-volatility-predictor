@@ -24,13 +24,13 @@ At the heart of this project is the LightGBM (Light Gradient Boosting Machine), 
 ### Model Training and Validation
 Cross-Validation: To ensure the model's robustness and prevent overfitting, we employ TimeSeriesSplit for cross-validation. This technique is specifically designed for time-series data, as it preserves the temporal order of observations. The data is split into 7 consecutive folds, with the model being trained on past data and validated on future data in each fold.
 
-### Hyperparameters: The LightGBM model is configured with the following key hyperparameters:
+Hyperparameters: The LightGBM model is configured with the following key hyperparameters:
 1) n_estimators: 105
 2) learning_rate: 0.023
 3) objective: 'regression'
 4) metric: 'rmse'
 
-### Feature Selection: After an initial round of training, a feature importance analysis is conducted to identify the most influential features. The model is then retrained using only the top 20 features, which helps to reduce noise and improve generalization.
+Feature Selection: After an initial round of training, a feature importance analysis is conducted to identify the most influential features. The model is then retrained using only the top 20 features, which helps to reduce noise and improve generalization.
 
 ## Project Structure
 The project is organized into the following key components:
